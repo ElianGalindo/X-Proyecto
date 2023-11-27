@@ -15,11 +15,11 @@
       if(password_verify($password, $usuario['password'])){
         echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Success', 'USUARIO' => $usuario]);
       }else{
-        echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'contrasenias no coinciden']);
+        echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'Las contraseñas no coinciden']);
       }
       
     } else {
-      echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'No se encontro usuario']);
+      echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'No se encontro el usuario']);
     }
    
   } else {
