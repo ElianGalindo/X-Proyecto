@@ -2,6 +2,7 @@ let usuario
 
 const btnLogin = document.getElementById('btnLogin')
 
+//Boton para inicio de sesion
 btnLogin.addEventListener('click', () => {
     const email = document.getElementById('email')
     const password = document.getElementById('password')
@@ -11,7 +12,7 @@ btnLogin.addEventListener('click', () => {
         activaAlerta('Los campos no pueden estar vacios')
         
     } else {
-        //Intentamos logearnos
+        //Intentamos logearnos 
         const sendData = {
             email: email.value,
             password: password.value

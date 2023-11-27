@@ -4,7 +4,7 @@
   $dataPost = file_get_contents('php://input');
   $body = json_decode($dataPost, true);
   if($body !== null) {
-    
+    //Hacemos la consulta
     $email = $body['email'];
     $password = $body['password'];
     $queryUsuario = "SELECT * FROM usuarios WHERE usuario='$email'";
