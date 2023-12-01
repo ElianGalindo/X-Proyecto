@@ -11,3 +11,32 @@
     height: 100%;
     }
     }
+
+    .contRegistro{
+        width: auto;
+        height: 700px;
+        text-align: center;
+    }
+    .inputDatos{
+        width:350px;
+        height: 45px;
+        margin-left: 83px;
+        margin-top: 30px;
+    }
+    .botonR{
+        height: 45px;
+        width: 350px;
+        border-radius: 15px;
+        background-color: black;
+        color: white;
+    }
+    .containerbtnReg{
+        margin-top: 140px;
+        margin-left: 70px;
+        height: auto;
+        width: auto;
+        padding: 15px;
+    }
+    .tituloReg{
+        margin-left: 95px;
+    }
