@@ -2,8 +2,6 @@
     include("../Config/conexion.php");
     $conn = conectar();
     $nombre = $_POST['nombre'];
-    $apaterno = $_POST['apaterno'];
-    $amaterno = $_POST['amaterno'];
     $usuario = $_POST['email'];
     $password = $_POST['password'];
 
