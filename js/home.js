@@ -52,7 +52,7 @@ const loadUser = () => {
             loggedUser = user.MESSAGE
             const inputIdUser = document.getElementById('idUsuario')
             inputIdUser.value = loggedUser.usuario
-            titulo.innerHTML = loggedUser.nombre + ' ' + loggedUser.apaterno + ' Blogs'
+         
             
         })
     }
