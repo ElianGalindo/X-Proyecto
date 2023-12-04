@@ -25,6 +25,15 @@ const dibujaPosts = posts => {
         postCard.querySelector('.fecha').textContent = item.fecha
 
         const clone = postCard.cloneNode(true)
+        /*clone.querySelector('.card').dataset.idpost = item.idUsuario;
+
+        // Agregar manejador de eventos para el botón de repostear
+        const btnRepostear = clone.querySelector('.btnRepostear');
+        btnRepostear.addEventListener('click', () => {
+            const idPostOriginal = item.idUsuario;
+            const idPostOriginalInput = document.getElementById('idPostOriginal');
+            idPostOriginalInput.value = idPostOriginal;
+        });*/
         fragment.appendChild(clone)
     })
     postContainer.appendChild(fragment)
