@@ -1,5 +1,5 @@
 <?php
-    include("../Config/conexion.php");
+   include("../Config/conexion.php");
     $conn = conectar();
     $querySelect = "SELECT * FROM posts";
     $posts = mysqli_query($conn, $querySelect);

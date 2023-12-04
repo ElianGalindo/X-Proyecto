@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width: 475px;">
+        <!--Form para los post_________________________________________-->
+        <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
+          <input class="postTitulo" type="text" placeholder="Titulo" name="titulo">
+          <input style="border:none;" name="idUsuario" id="idUsuario">
+          <div class="form-group">
+            <textarea class="postInfo" required="" placeholder="¡¿Qué está pasando?!" name="mensaje"></textarea>
+          </div>
+          <button type="submit" class="btnPostear2"><span style="font-size: 17px;">Postear</span></button>
+    </div>
+    <div id="postUsuarios">
+    </div>
+
+    <template id="cardPost">
+        <div class="card" style="width: 100%;">
+          <div class="card-body">
+            <h3 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text"></p>
+            <p class="fecha"></p>
+          </div>
+          <button  data-bs-toggle="modal" data-bs-target="#repostModal">Repostear</button>
+        <div class="modal" id="repostModal">
+            <div class="modal-dialog"  style="height: auto;">
+                <div class="modal-content">
+                <!--contenido donde iria el post original y los inputs para el nuevo post-->
+                </div>
+            </div>
+        </div>
+        </div>
+      </template>
+</body>
+</html>
