@@ -5,70 +5,164 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav">
-      <p id="userBlog"></p>
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search Blog..">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="glyphicon glyphicon-search"></span>
-          </button>
-        </span>
+<div class="cuerpo" style="display: flex;">
+  <!--parte de iconos--------------------------------------->
+  <div class="iconos">
+     <div style="margin-left:145px; margin-top: 15px;">
+       <p><i class="bi bi-twitter-x icono-inicio"></i></p>
+       <p><i class="bi bi-house-door-fill icono-inicio"></i><span class="texto-inicio">Inicio</span></p>
+       <p><i class="bi bi-search icono-inicio"></i><span class="texto-inicio">Explorar</span></p>
+       <p><i class="bi bi-bell icono-inicio"></i><span class="texto-inicio">Notificaciones</span></p>
+       <p><i class="bi bi-envelope icono-inicio"></i><span class="texto-inicio">Mensajes</span></p>
+       <p><i class="bi bi-card-list icono-inicio"></i><span class="texto-inicio">Listas</span></p>
+       <p><i class="bi bi-twitter-x icono-inicio"></i><span class="texto-inicio">Premium</span></p>
+       <p><i class="bi bi-person icono-inicio"></i><span class="texto-inicio">Perfil</span></p>
+       <p><i class="bi bi-three-dots icono-inicio"></i><span class="texto-inicio">Mas opciones</span></p>
+       <button class="btnPostear"><span style="font-size: 17px;">Postear</b></span></button>
+     </div>
+  </div>
+  <!--parte de posts------------------------------------------------->
+    <div class="apartadoPost">
+      <div class="header" style="display: flex; height: 40px;">
+        <div style="width: 300px; 
+                    height: 40px; 
+                    margin-left: 70px; 
+                    margin-top: 20px;">
+          <b style="font-size: 15px;">Para ti</b>
+        </div>
+        <div style="width: 300px; 
+                    height: 40px; 
+                    margin-left: 100px; 
+                    margin-top: 20px;">
+          <b style="font-size: 15px;">Siguiendo</b>
+        </div>
       </div>
-    </div>
-
-    <div class="col-sm-9">
-      <div class="mT-5">
-        <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
-          <input name="idUsuario" id="idUsuario">
-          <div class="row">
-            <div class="col-xs-12 col-sm-6">
-              <div class="form-group fl_icon">
-                <div class="icon"><i class="fa fa-user"></i></div>
-                <input class="form-input" type="text" placeholder="Post Title" name="titulo">
-              </div>
+      <p style="color: rgb(241, 234, 234); font-size: 15px;">_______________________________________________________________________________________________________________________</p>
+      <div class="posts" style="margin-top: 1px;">
+        <!--Apartado para escribir post----------------------------------------->
+        <div style="display: flex;">
+          <div style="width:75px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; margin-left: 20px; margin-top: 20px;">
+              <img src="https://www.lavozdegalicia.es/default/2017/04/03/00121491220255837800973/Foto/twitterrc.jpg" alt="profile" 
+                  style="width: 40px; height: 40px; border-radius: 50%;">
             </div>
-            <div class="col-xs-12">									
-              <div class="form-group">
-                <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Postear</button>
-            
           </div>
-        </form>
+          <div style="width: 475px;">
+            <!--Form para los post_________________________________________-->
+            <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
+              <input class="postTitulo" type="text" placeholder="Titulo" name="titulo">
+              <input style="border:none;" name="idUsuario" id="idUsuario">
+              <div class="form-group">
+                <textarea class="postInfo" required="" placeholder="¡¿Qué está pasando?!" name="mensaje"></textarea>
+              </div>
+              
+              <div style="width: 525px; height: 20px;">
+                <p style="color: #1DA1F2; font-size: 15px;">
+                  <i class="bi bi-globe-americas"></i> 
+                  <a href="#" style="text-decoration: none;color:#1DA1F2;"><b>Cualquier persona puede responder</b></a>
+                </p>
+              </div>
+              <p style="color: rgb(241, 234, 234);">______________________________________________________________</p>
+              <!--Iconos para agregar algunas cosas a los post y boton de postear----------------------->
+              <div style="width: 525px; display: flex;">
+                <div style="width: 400px; height: 30px;">
+                  <p style="font-size: 17px; color:#1DA1F2;">
+                    <b>
+                      <i class="bi bi-image"></i>&nbsp;&nbsp;
+                      <i class="bi bi-filetype-gif"></i> &nbsp;&nbsp;
+                      <i class="bi bi-list-ul"></i> &nbsp;&nbsp;
+                      <i class="bi bi-emoji-smile"></i>&nbsp;&nbsp;
+                      <i class="bi bi-calendar-plus"></i>&nbsp;&nbsp;
+                      <i class="bi bi-geo-alt"></i>
+                    </b>
+                  </p>
+                </div>
+                <div><button type="submit" class="btnPostear2"><span style="font-size: 17px;">Postear</span></button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
       </div>
+      <!----Div para la vista de los post--------------------------->
       <div id="postUsuarios">
       </div>
     </div>
-  </div>
+    <!--Parte de noticias-->
+    <div class="noticias">Noticias</div>
 </div>
 
-<!--Muestra los post-->
 <template id="cardPost">
-  <div class="card" style="width: 100%;">
-    <div class="card-body">
-      <h3 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text"></p>
-      <p class="fecha"></p>
-    </div>
-  </div>
+  <div class="card" style="width: 100%;" data-idpost="">
+    <div style="display: flex;">
+      <div style="width:45px;">
+        <div style="width:30px; height:50px;border-radius:50%; margin-left:10px; margin-top:10px;">
+          <img src="https://www.lavozdegalicia.es/default/2017/04/03/00121491220255837800973/Foto/twitterrc.jpg" alt="profile" 
+               style="width: 30px; height: 30px; border-radius: 50%;">
+        </div>
+      </div>
+      <div class="card-body" style="width: 300px;">
+        <div style="display: flex;">
+          <div><h5 class="card-title">Card title</h5></div>
+          <div style="margin-left:10px; margin-top:3px;"><h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6></div>
+          <div style="margin-left:10px;"><p class="fecha">Fecha Publicacion</p></div>
+        </div>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div style="width: 100%; height:20px;">
+          <p>
+            <i class="bi bi-chat-right"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-retweet" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-list-columns-reverse"></i>&nbsp;&nbsp;&nbsp;
+            <i class="bi bi-bookmark"></i>
+            <i class="bi bi-upload"></i>
+          </p>
+          
+        </div>
+        <button id="btnRepost" data-bs-toggle="modal" data-bs-target="#repostModal">Repostear</button>
+        <div class="modal" id="repostModal">
+          <div class="modal-dialog"  style="height: 500px; width: 550px;">
+            <div class="modal-content" style="height: 200px; width: 525px;">
+               <div class="postUsuarios"></div>
+               <div class="posts" style="margin-top: 1px;">
+                <!--Apartado para escribir post----------------------------------------->
+                <div style="display: flex;">
+                  <div style="width:75px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; margin-left: 20px; margin-top: 20px;">
+                      <img src="https://www.lavozdegalicia.es/default/2017/04/03/00121491220255837800973/Foto/twitterrc.jpg" alt="profile" 
+                          style="width: 40px; height: 40px; border-radius: 50%;">
+                    </div>
+                  </div>
+                  <div style="width: 475px; margin-top: 15px;">
+                    <!--Form para repostear_________________________________________-->
+                    <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
+                      <input class="postTitulo" type="text" placeholder="Titulo" name="titulo">
+                      <input style="border:none;" name="idUsuario" id="idUsuario">
+                      <div class="form-group">
+                        <textarea class="postInfo2" required="" placeholder="Postea tu respuesta" name="mensaje"></textarea>
+                      </div>
+                      <div style="margin-top: 50px; margin-left:350px;"><button type="submit" class="btnPostear2"><span style="font-size: 17px;">Responder</span></button></div>
+                    </form>
+                  </div>
+                </div>            
+              </div>
+            </div>
+          </div>
+        </div>
 </template>
 
-<footer class="container-fluid">
-  <p>Footer Text</p>
-</footer>
+
 <!--<script src="./js/login.js"></script>-->
 <script src="./js/home.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
