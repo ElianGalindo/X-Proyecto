@@ -17,6 +17,7 @@
 <div class="cuerpo" style="display: flex;">
   <!--parte de iconos--------------------------------------->
   <div class="iconos">
+    <!--iconos de x----------------------------------------->
      <div style="margin-left:145px; margin-top: 15px;">
        <p><i class="bi bi-twitter-x icono-inicio"></i></p>
        <p><i class="bi bi-house-door-fill icono-inicio"></i><span class="texto-inicio">Inicio</span></p>
@@ -27,7 +28,85 @@
        <p><i class="bi bi-twitter-x icono-inicio"></i><span class="texto-inicio">Premium</span></p>
        <p><i class="bi bi-person icono-inicio"></i><span class="texto-inicio">Perfil</span></p>
        <p><i class="bi bi-three-dots icono-inicio"></i><span class="texto-inicio">Mas opciones</span></p>
-       <button class="btnPostear"><span style="font-size: 17px;">Postear</b></span></button>
+       <!--Boton para postear---------------------------------------------------------------->
+       <button class="btnPostear" data-bs-toggle="modal" data-bs-target="#posteoModal"><span style="font-size: 17px;">Postear</b></span></button>
+       <!--Perfil debajo del boton de postear-->
+       <div class="perfil">
+        <div>
+          <div style="width: 40px; height: 40px; border-radius: 50%; margin-left: 20px; margin-top: 20px;">
+            <img src="https://www.lavozdegalicia.es/default/2017/04/03/00121491220255837800973/Foto/twitterrc.jpg" alt="profile" 
+                style="width: 40px; height: 40px; border-radius: 50%;">
+          </div>
+        </div>
+        <div style="width: 130px; margin-left: 10px;">
+          <div style="margin-top: 20px;"><h6 id="nombreUsuario" style="font-size:15px;"></h6></div>
+          <div><p id="usuario" style="font-size: 13px;"></p></div>
+        </div>
+        <div style="width: 30px; margin-left:20px; margin-top: 20px;"><i class="bi bi-three-dots" style="font-size: 15px;"></i></div>
+       </div>
+
+       <!--Modal del boton de postear-------------------------------------------------------->
+       <div class="modal" id="posteoModal">
+        <div class="modal-dialog">
+          <div class="modal-content" style="height: 300px; width: 625px; border-radius: 17px;">
+            <div style="display: flex;">
+              <div style="height: 50px; margin-left: 5px; margin-top: 5px;">
+                <button data-bs-dismiss="modal"
+                        style="background-color: white;
+                               border:none;
+                               width: 50px;
+                               font-size: 20px;">
+                  X
+              </button>
+              </div>
+              <div style="margin-left:450px; margin-top: 15px;">
+                <p style="font-size: 15px; color:#1DA1F2;"><b>Borradores</b></p>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div style="width:55px;">
+                <div style="width: 40px; height: 40px; border-radius: 50%; margin-left: 20px; margin-top: 20px;">
+                  <img src="https://www.lavozdegalicia.es/default/2017/04/03/00121491220255837800973/Foto/twitterrc.jpg" alt="profile" 
+                      style="width: 40px; height: 40px; border-radius: 50%;">
+                </div>
+              </div>
+              <div style="width: 500px; margin-left: 15px; margin-top: 20px;">
+                  <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
+                    <input class="postTitulo" type="text" placeholder="Titulo" name="titulo">
+                    <input style="border:none;" name="idUsuario" id="idUsuario">
+                    <div class="form-group">
+                      <textarea class="postInfo2" required="" placeholder="¡¿Qué está pasando?!" name="mensaje"></textarea>
+                    </div>  
+                  </form>
+                </div>
+            </div>          
+            <div style="width: 525px; height: 20px; margin-top: 75px; margin-left: 15px;">
+              <p style="color: #1DA1F2; font-size: 15px;">
+                <i class="bi bi-globe-americas"></i>
+                <a href="#" style="text-decoration: none;color:#1DA1F2;"><b>Cualquier persona puede responder</b></a>
+              </p>
+            </div>
+            <p style="color: rgb(241, 234, 234);">____________________________________________________________________________</p>
+            <!--Iconos para agregar algunas cosas a los post y boton de postear----------------------->
+            <div style="width: 625px; display: flex; margin-left: 15px;">
+              <div style="width: 500px; height: 30px;">
+                <p style="font-size: 17px; color:#1DA1F2;">
+                  <b>
+                    <i class="bi bi-image"></i>&nbsp;&nbsp;
+                    <i class="bi bi-filetype-gif"></i> &nbsp;&nbsp;
+                    <i class="bi bi-list-ul"></i> &nbsp;&nbsp;
+                    <i class="bi bi-emoji-smile"></i>&nbsp;&nbsp;
+                    <i class="bi bi-calendar-plus"></i>&nbsp;&nbsp;
+                    <i class="bi bi-geo-alt"></i>
+                  </b>
+                </p>
+              </div>
+              <div><button type="submit" class="btnPostear2"><span style="font-size: 17px;">Postear</span></button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Termina modal de postear------------------------------------------------------------------------------------------->
      </div>
   </div>
   <!--parte de posts------------------------------------------------->
@@ -39,11 +118,17 @@
                     margin-top: 20px;">
           <b style="font-size: 15px;">Para ti</b>
         </div>
-        <div style="width: 300px; 
+        <div style="width: 250px; 
                     height: 40px; 
                     margin-left: 100px; 
                     margin-top: 20px;">
           <b style="font-size: 15px;">Siguiendo</b>
+        </div>
+        <div style="margin-left: 50px;
+                    width: 50px; 
+                    height: 40px;
+                    margin-top: 20px;">
+          <i class="bi bi-gear" style="font-size: 17px;"></i> 
         </div>
       </div>
       <p style="color: rgb(241, 234, 234); font-size: 15px;">_______________________________________________________________________________________________________________________</p>
@@ -98,7 +183,64 @@
       </div>
     </div>
     <!--Parte de noticias-->
-    <div class="noticias">Noticias</div>
+    <div class="noticias">
+      <!--Input de buscador-->
+      <div class="form-outline mb-4" style="margin-top: 10px; margin-left: 20px;">
+        <input type="text" 
+               class="form-control form-control-lg" 
+               placeholder="Buscar"
+               style="width:360px; 
+                      height: 40px; 
+                      border-radius: 15px;
+                      background-color: whitesmoke" />
+      </div>
+      <!--Noticia 1-->
+      <div class="contenedorNot">
+        <div>
+          <h3><b>Suscribete a premium</b></h3><br>
+          <h5>Suscríbete para desbloquear nuevas funciones y, si eres elegible, recibir un pago de cuota de ingresos por anuncios.</h5><br>
+          <button style="background-color: black; 
+                         border:none; 
+                         color:white;
+                         height: 30px;
+                         width: 100px;
+                         border-radius: 15px;
+                         font-size: 12px;">Suscribirse
+          </button>
+        </div>
+      </div>
+      <!--Noticia 2-->
+      <div class="contenedorNot2">
+        <h3><b>En directo en X</b></h3><br>
+        <h6>Milenio <i class="bi bi-patch-check-fill" style="color: rgb(0, 128, 255);"></i> es anfitrion</h6>
+        <h5>Transmicion de Milenio</h5><br>
+        <div style="width: 40px; height:40px; border-radius: 50%; margin-top: -45px; margin-left: 280px;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXKCNHmim0lqLV0qYqReirTt6n5rGnJ5xLmQ&usqp=CAU" alt="milenio" style="width: 40px; height:40px; border-radius: 50%;">
+        </div>
+      </div>
+      <!--Noticia 3-->
+      <div class="contenedorNot3">
+        <h3><b>Que esta pasando</b></h3><br>
+        <h6 class="text-muted">Liga MX . EN DIRECTO</h6>
+        <h5>Pumas vs Tigres</h5><br>
+        <div style="width: 60px; height:60px; margin-top: -45px; margin-left: 270px;">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBUSEhIRERUREREREREQEREREhERERERGBgZGRgUGBgcIS4lHB4rIRgYJjgmLC8xNTU1GiQ7QDszPy40NTQBDAwMEA8QHhISHjQhISs0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQxNDQ0NDQ0NDQxNDE0NDQ0NDQ0NDQ0Mf/AABEIAKgBLAMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAACAAEDBAUGBwj/xAA8EAACAQMCBAQDBwIEBgMAAAABAgADERIEIQUxQWEGEyJRMnGBBxRCUpGhsSNigpLB0RUkcqLh8BYzg//EABkBAAMBAQEAAAAAAAAAAAAAAAABAgQDBf/EACcRAAICAgICAQQCAwAAAAAAAAABAhEDIRIxBEFREyIyYZGhQnGB/9oADAMBAAIRAxEAPwDzHCLCPlFlNlmQWMQSPlHDQsB7QGhF5G5ghIbKODAhLGUSrHIiTfYSZKqA2+Mgi4swX5e5P0ilNR7FGLfRWxj4yzW1qqoPobYDE06ZN73tewPI/wAd5UGvIqFrFkI9KuoAtt+HccxOf1l8HT6b+QrRWk61Ue22BIF7Xtf5b9e/0juljY9v3lxlGXRzlFx7K9orSe0WMoVkFo8mxixhoLIY8lxjYw0FkUUlxjYQ0FkV4rybGLGFILIbxXkuEWEKQWRXiykmEbCFILI8ospJhGxipBYGUWUPGNjCkFg5RZR8Y2MKQ7FlFlFjFjCkFjZxs4WMbCKkFlfOLODFJLoPOLODFGFB5xZQI4gFBZRw0CPGSW03QgYjJrZ/iAHMA3sOcruaeICj1jrvbn7S1pENRVorbI1BjfbmOp6Da5nW8I8KIQrMfMZzgirYBn2vkWFwNweXKxvM2SST2aMcG1oy+BcNovTUuhdmJYA5WA+Q5zqqXCdMyqDp0IX3/kbzW1nARToimir5jAZ4sQCo3wy2Nibe3Kcf/wAArPXA8r7uACS/pe46m1tv8xmV227ZsjSSSVl/xTwKktMV6dHAUz/UWmVUslgA9t+R58tid5w1XUZMW+QA5bAWH8Ts+P6NyoceZUp0tO4ZsreXUCm7t1KEW27b3nBzX4+4tmLyVUqJvNi82QxTSZ6JvNi82QXjwFRP5kloI9RglNWdzyVQWJlrw7wR9dXWhT9IsXqVCLrTpjmxHU3sAOpPzM71eDjQUqiUaTVawUN+BnrG4sMtthzsB0PXnyyZOOu2dseHlt6Rx7+H3p06lSu9OgVpl0pucmqH8gI2BPTczE8yHxHVVatRmrs5qAkMHuChH4cT8NvaVLy48q2RNRvSLPmReZK14spVkUWfMi8yVcosoDos+ZF5kq5RZQsKLXmReZKuUWUAotZRZSrlFlEFFnKNlK+UWUAosZRspBlFlCwonyiylfKLKA+IEe0e0e0RTYMUciNAExR1WOglqlTvATZXCGLAzQWhD+7wsRBwrU+RWp1SLhG9Q64kENbvYmepuEQNX2ayZMBUI8pgbAquwC4G1uw2vczzajoTUdUUXZ2VF+bG3+s9G1/DleorDnTTFbi6XAte3WZfIS0zZ4sm016EOIFMArfCoJyIN2PO0m1PEM1cM6U2dCEsbZE9SOc4May16aXby/StzZsV2tvzsBb6S+dM2rpipQrGi9NVRrKGy2O9+Y3tuO+xnDjv9HaMvXs0afEWp09QHcVKJ09cYmjhmStgoN9+p9zbeec2nQVtBXpUajVqxqK9RaSqKmam4LMxB3X4bchMryprw6TMvkNuVMqWitLflRxSnbkcKKlpPpdK9V1Smpd2OyqP3PsO80NBwl6x9NlQEB3a+C3+W5PYT1Hw5wbT0Kf9BlqM1vMqWs7H2I5qPYTnLKlr2dI4m9+iXwpol0WlFEKPNc51qg3Lv0F+igbAfXmTLWrCst3ANjkL2Nj7iVuMcUpaankzeomwB6n2Hv8A+JxXG/Ej1qbU6eSBwVZ+RC9u8z7kztyUUZnjyiF1SvzapSUu1rBypKhr/IDvtOYtNKpTZrZMzYjEZEtYXvbf5mRHTzVF1FJmeX3NtFODLbUJG1OVaJorxQ2WDaMQ0aFaDABRRRwIDGikgSF5cBEMUl8qN5cB2RxSTyzGwiCyOKHjGxgOxhJIAhxksFoJEJoMQIkpjeaOmEzafOaFAwYGlptO1RglNXqO3wois7n3so3nTcN8DaqqwFRBpk6vUKlgOyA3J5c7fOav2SaiplqURV8u1N3qNswPqCoPe+57W7z01qij/ecnJp0VSOY4d4X0Oipg1RTdywH3jUYq3mdAl9k7Y79zOf1rJTapTputekCWSojq+IJ+Cpj8LKTzPMWm9q/DjPqX1SazUJUY+n0UHFFLFcEDLYbG1zf9d4Wj8NLTrNUao1RWYVHZyfPr1BhY1X5MoKAhQFUWAAkzxqS29nTFm4PXR5V4l0IBFVBbe7hR1P4v95k8K4m+mctY+W3xAAlSPbtPXeN+HaWof/liFLLk4sRQAvbIOLgcj6d79p5i+kQ1n02kb70UJzqU1K0ybn4WJ3Ucstgd7cxOMYSVqXXyd5ZFKpR7+AdXqqVRFSiHCl2qOXN/URYKvsAMtu8p+XNGvwfUILtSa39pRz+ikmLhfB6upb0LigPrqOCEX3Hc9h+07xcYx09HCSlKW1szgk3eGeHWaz1706fMIdncfL8I7nf2HWdJwzhVHTDJR5lXlm4Ba/8AaOSfz3ktU5Ndjf8AgTPk8j1H+TRj8f3L+CumnUAKiqiLsoUWCg8z3Pc7mElcads91QXDHq4/LJatVEXJiLDe3uZyXEuJNWckmyD4V6fOcccJSlZ2y5FGNA6/UtXqM79ScV6KPaVxREStCDzdVHngmiJG1GT5QSYhlV6MrVacvsZVrGUhNGZUWRWlitIJ0RDGtAYSWA0YiOSUxBtJaUYFmjTlgUI2nlwGS2NIq/d433eXLxQsRROngNQmgbSNoWBQNGD5UusIForKSMcSSABDlksAxo5EaAwkl6iZQWanBtIa9ehQFx51anSuOYDsAT9ASfpExHtf2a6QUtAAbCrUdq1QWN1DgYAn3wCm3TKa+u1JU2AO/tLPD+Hrp6ZRDcFixYhQWsAijb8qKijsolTiL4glQ2Q6rbK3sCVNvna/cTnHtsUgVq42zOJb4U5u/wD0rz+vISeppWqhfXUooD6hTKBnFiMWcgkc7+kjlznI/wDyqjSZlCEPezv5iVXYj8z3JJ+cyfGXi/8A5R0okrU1DeSWJZnWmQS9mPK4GNhb4o7vVkRauiDxb4pbWVG4bw9gmlW6Vqybeaq7MqkcqY5bfF8ju/CeHJpVwp2JO7tf1Me84rgWsWkr2+JiAT/aBy/Uma44yu1zcg3mPyZSk+K6X9s9TxowirfbO6osrW6tcbNyvJOIaxUXyw13Ny7cwOw7zi08Rrt6gPnyg1OPAm90JPUWvM6tKqNH2t3Z06Ntfn3kFbUKtyTew+k5zUcZcJZbADfbaY2q4ozggHY8z7mXDFKekRkzRgt9mhxnixqNiD6Rz/2mYtWUi8bzJ6MMShGkebLI5ytmilaSCpMtaklSrBxBM0fMiNSUvOgNWi4jsvM8gqmVxVjNUhQWQ1ZCIdQyMGWiAoLR7wTGIGSU5HDWUIvUXlpXmdTeTipObRSZbLxhUlRqsHzYUOy8XgF5W86RtWhQFvKNeVVqw/MiGUlERhQWlkrsGPjEIYEENoDGdN9nVLPimkHRXdz2CU3YfuBOeKzvPsf0Oetq1Tyo6ZgB1zdgB9MVf9YpdCPUuK8SKnBBv3mQ1OtU/GUH9ihmP6/+JpazQM1TPp/Pf5SaklhYRJKtHJ23s4zj3gk1l8yk7+cBdhWqO/mf4j8J9gBbvPP6unenUNKohR1YBkYf+3nu5529pzfjjg6VaBq+lK1Mp5b7D1MwUBifw3O/y7SJY09oVX0cPwzQ0GZcqdMk1MH9IBtnYE/Qg37ydOB0kaqKlBatFdM7rUV6gqU6i+piyg7jBXIAB3G/MSPX6WtRTTV1phEXBPW5V6tM3t6bbAWuCTfc7AHe9V1KM2sdwwx01aulFmwcOlnQMAdxlblcH3k0r2WpST7OA1FRHdjTRUQn0IS7FR3N+fX6wzpqagM7FT7Btv3vIKe30ErOMjdpUox6SO0W/bNTzKJWwY/Vj/rKzIPwm4lrg/h59RuNlm0vhB6YZi2w/eTHKo6OjxOSs5ZhGvJdUhDsp6G0htNKdozVTHBjgwRHtChhFoJMUQioBAx7xwsIpACJoOMmxjYwCyIrBIkrCBaIpA2ihCJpSJYlMMNIbw1MBBO0jyjtIzEMMvALRojAaCV4WciiiGSgxGCDFeIYQhAyOIGMCcGen/YxSF9a+QvbTJj+ID+ocj2PL6GeWAz0f7LdW1OnrvLW9So2lp0zbcsfN69rg/4hFL8SG6PStTrnNRkp4sE2djsqt+S/U/xIlqm4yPPcKo3IHMntHGlFCiqm5tu5FsqlRj8I+Z2v0Av0i0iG5Y2yO7N0v0Cj2HT/AHJMUarRyd3stUrEXFiDvcbg/KQcSpK6pTcBlqVaasDYghW8yxHW+FvrFURkN6eO/wAaMSEY/mBAOLd7G/t1GVreIO2o0tEDC9ZS3JsynrIVvyhQbm17kDbq2Wh/GOi83Rkj4qbZg/LpOB8QViNI1TrUoUU3AuLsiMB8wjj6mej8R4inmNonV71aalagUMis7MiKwBy3I52sOpE8t8Zuy0dMlrJnVyb+9TcL/wB7GRW7Fx+5HJI3T3l7T8EdxkBsTM+09F8HOHoeu21/bpJzNpWjXhjFumNw7htVKSqlgZt0NIxUJVa2QtBp6jFrLyj6rVklb8/leZIuzbSRwXiXhq06zKvLnMJknT+IGvUu3t1mBWE9OP4o8uepNFKPeJo0LFQiY6mMIhFZSRMhh3gIIZWAmCxgEx3gwECxkZMNoBgMQMeCokgWAmRMIaLDxlmlTjFZVZJA00aibSjUEGCI7xGNHtEWNHitFaABLCxgrJhJGRFIsZMRBtCxUCBPY/sp0AGnR8d2NWqT7Mz+Wh/yo36zx4Ce7eAqbLoNKiH0PpkPIfG7F2N+ZsDb6iTJ6BrRvaj+o+X4UuEHuTsW+vIdvnCWniN9r8pYdkpjFRk3Lbp8z0latXv7e0I/ro5yQPO8p1dKA1Kp+Kmai36XqFWdvndP3MtoNpncSq+VTZ2ao6htqaqhJ9JIANrk7HcnrvtKZI2v061NbQdTvTph6vW6B/6QHsci57hflOD4+6aqrqNMCuCMwpn8tW9y/cE7HtNrRccFOjrNRUdTXVltR9V1AXGmouBdSSdx0FzYkgeX/e3V8yTnkXZupYm5Mz5ZtUkasMLds6Xwr4Jq6vJ6gNOml13+JmGxHynofg7wiNOjioc7scQeSp0EP7N+MLqNMabW8ynv/wBVNuR+huP8s7C4RZf1OUaolxcZdnEeIPD7UyalG5A3KjpOT1PGRR3cbietfeA5xsbd55V9qXCTTK1UHoY2YDoT1nFYk5Jo6rO0qfZx3FeKedUztYTNqPeRiOFmxaVHB7dsjMUMpBIjEDCWAY4MB2WkWSBJHRaTZRollaotoMncXkDCSxpAGMwj2hYwHQCiGIjBJgKg1MnR5UvHyjsTRarVBaUXN4TveAYWCRHaPaEBHtEWMqx8ISwoWIhVTJAZMiQXSQUMDFaCskWUhMVNAWUOSqFlDsBkVQkZMB1IFzae48N4iaNELpqTPoqAWmlSmMmdMUIZCTd9juw2M8b4fo3r1KdCkMqlV1RAeVz1PsBuT2Bn0PwPhKaPS0tLTOS01N2YAFmZizMR0uxJtInSoT2ihwri1PUKzIrrZil3sCSOfpHK3eWWXfbr+0zeL8ErtX+8aWv5LlQr03TKlUtyO3L9DCo8SrU7Jq9O4PSppga9Ju9l9SfURxl8nJpmla38SlxS3lVCyu4CkYp5efqBS6hyFuA5O5kNXjWne9N3Ki3qX4T8m6j9pQra3R1DhR1JWrcFS1TU1aQfpkrPiw7Ag9wYckCo4riWhdVqFwmFqbZ5W/rZBPSvfNhub8pyuro2vOk+0NAhoBEZUZLVHanWRmrJYYmo/wD9ijdlIJ5mV9BwOrW0f3sDMIzLUA+NaY5P3G2/6+8z5oN/cjXhkkqfsreDOPnR6hHN8L4uPzUzsw+fUdwJ7jxDiapTWolnRwrIy7qVYXDfK08J/wCBCpYoxB6g22nf+C9a60/uGpa6m4079VJ3NM36HmO+3UScM48kpFZsUnG0dhwfiQrZbFSpsb/6St4w4aup0tRDzxJHYy7w7hwpXNySeZMn1NsGB5EGanXLRjV1s+a2Qhip5qSD8xJFSX+M6cLqqyruMyRbvGo0LzqlZXLVlBlkbLNdtJIqulsI+LFyRkMIEvPQkDUouLCwEa0nzkBW0QiaoaLQa4kbRI0ZzEUDbeTBZAh3k5MaBkNRZHJHMjWIEK0EyWCwgTZCTFeEUixgUmJY5jCImJDaHEe8YCNChWWEeJzIYayShrRAywlO8B6do0Js9D+x7hoqaitqmFxp0FOnfl5lS9yO4VSP/wBJ60D1Jtckn5Th/sn0nl8OL9a+pqv/AIUC07fqjfrOsIvz+khrkyZOidXDG4It23jgj2MqimQbrtzv7GSI562jcSEwtToadVSlVEdDzV1DD95jv4M0fSiAPYFtvre83Fa/OSFwBIaK0eO/aLpK+mK0cstFUbKiGu7I6KMlLMLj4jbcm1xynWfZtddAhHux/UxvtXdfuCKwu76mmKe17MFck36enIfWafhPh/kaOnTPVL/U7yv8WV8IwvE/BRpidVSH9BrF0UXFJv7QPwn9iflMtMaio6XyO4ts23X5jtPRNQl6TgEMCpFjuCOonJ8D4YtFKxplTUYOiUzckDLmtzYGxtsOQmTLi6kvZqwZW3xfo6jgmtNamHJ9S+hx/cAN/qCDD1JDK9zyBnCK+oQhKDim5qAPfdGUGxHY78+07JOHMtM5vdiu57zViknG32Zs+NxnSWvR41xVQNXVA3Gcm04Em43wGpTqPUW7BmJmWKxU+q4Ped4TT6OcoNaZtFRKtZBIKervE+onbkiFFplbUKAJQYSfUVCZWLSLKoiqDeABJSl42EiTKihAQGh2itIsugVEl6R1SJoWVRXqSO8lqSIxkhqYVryNFl2lRNpSE0QeXBKy4yWlWo0GCRA8jBhvvBAiGEDGyjEwYWKixU5xK0aKQUXqLbRqm8UUtEPs9r+ztw3DNLba3nqR3FZwT/r9Z0qpFFOTEMy7HoZGD8ooo4ksM1Ldz0Eo6nUY4E7s5CgDkLG5/YRRSkJmB4/0/wB44Y1VQWfTumpFuWKko5PYI7t/hnQ8EqrU0dJuYNNf4iinLI6izrH0WKmmApsF6gmef6iq9PU0GTpqkV733puyhhb6RRTlP8EaPH/N/wCiGstUPmU/pqWywqKxQsxOTFQfTYAXHW/KdNq+PrT0fmOwLC6Kw/GABZv3jxRYu/8Ahp8lL6af7OZ03iGlU2YjfneFW4dpq+5sO4iikpuL0VCKmtlTW+G9MBam4VuxnN8R4W9EZEhl9x7Ropox5JN7M+fFFLRkVXkQQmKKaTESrTiYRRRMpAWjqkeKQUMQRAaKKJFETQcYopRLLOnp7iagQWiilxObKmpYATNcxoon2WugIoopLAYiDaKKSM//2Q==" alt="futbol" style="width: 60px; height:60px;">
+        </div><br>
+
+        <h6 class="text-muted">Tendencia . videojuegos</h6>
+        <h3><b>GTA VI</b></h3>
+        <h5>Tendencia en estos momentos</h5><br>
+
+        <h6 class="text-muted">Entretenimiento . Tendencia</h6>
+        <h3><b>Goku</b></h3>
+        <h5>10 posts</h5><br>
+
+        <h6 class="text-muted">Entretenimiento . Tendencia</h6>
+        <h3><b>#Deadpool3</b></h3>
+        <h5>1000 posts</h5><br>
+      </div>
+      </div>
+    </div>
 </div>
 
 <template id="cardPost">
@@ -112,36 +254,57 @@
       </div>
       <div class="card-body" style="width: 300px;">
         <div style="display: flex;">
-          <div><h5 class="card-title">Card title</h5></div>
-          <div style="margin-left:10px; margin-top:3px;"><h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6></div>
-          <div style="margin-left:10px;"><p class="fecha">Fecha Publicacion</p></div>
+          <div style="width: auto;"><h5 class="card-title" style="font-size: 17px;">Card title</h5></div>
+          <div style="margin-left:10px;width:auto; margin-top:3px;"><h6 class="card-subtitle mb-2 text-muted" style="font-size: 16px;">Card subtitle</h6></div>
+          <div style="margin-left:10px; width:auto;"><p class="fecha" style="font-size: 16px;">Fecha Publicacion</p></div>
+          <div style="margin-left: 250px;"><i class="bi bi-three-dots" style="font-size: 15px;"></i></div>
         </div>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <p class="card-text" style="font-size: 15px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <div style="width: 100%; height:20px;">
-          <p>
-            <i class="bi bi-chat-right"></i>&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-retweet" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-heart-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-list-columns-reverse"></i>&nbsp;&nbsp;&nbsp;
-            <i class="bi bi-bookmark"></i>
-            <i class="bi bi-upload"></i>
+          <p style="font-size: 17px;">
+            <button id="repostBtn" data-bs-toggle="modal" data-bs-target="#repostModal" style="background-color: white; border:none;">
+              <i class="bi bi-chat-right"></i>
+            </button>
+            <i class="fa fa-retweet" aria-hidden="true" style="margin-left: 90px;"></i>
+            <i class="bi bi-heart" style="margin-left: 90px;"></i>
+            <i class="bi bi-list-columns-reverse"style="margin-left: 90px;"></i>
+            <i class="bi bi-bookmark" style="margin-left: 90px;"></i>
+            <i class="bi bi-upload" style="margin-left: 20px;"></i>
           </p>
           
         </div>
-        <button id="btnRepost" data-bs-toggle="modal" data-bs-target="#repostModal">Repostear</button>
+        
+        <!--Modal para los reposteos---------------------------------------------------------------------------->
         <div class="modal" id="repostModal">
-          <div class="modal-dialog"  style="height: 500px; width: 550px;">
-            <div class="modal-content" style="height: 200px; width: 525px;">
-               <div class="postUsuarios"></div>
+          <div class="modal-dialog">
+            <div class="modal-content" style="height: 310px; width: 525px; border-radius: 17px;">
+              <div style="display: flex;">
+                <div style="height: 50px; margin-left: 5px; margin-top: 5px;">
+                  <button data-bs-dismiss="modal"
+                          style="background-color: white;
+                                 border:none;
+                                 width: 50px;
+                                 font-size: 20px;">
+                    X
+                </button>
+                </div>
+                <div style="margin-left:380px; margin-top: 15px;">
+                  <p style="font-size: 15px; color:#1DA1F2;"><b>Borradores</b></p>
+                </div>
+              </div>
+              <!--En este div parece el post original------------------------------------------------>
+               <div class="postOriginal"></div>
+               <!--En este div aparece el formulario para escribir el post-------------------------------->
                <div class="posts" style="margin-top: 1px;">
-                <!--Apartado para escribir post----------------------------------------->
                 <div style="display: flex;">
+                  <!--Este div es para la imagen de prfil-->
                   <div style="width:75px;">
-                    <div style="width: 40px; height: 40px; border-radius: 50%; margin-left: 20px; margin-top: 20px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; margin-left: 10px; margin-top: 20px;">
                       <img src="https://www.lavozdegalicia.es/default/2017/04/03/00121491220255837800973/Foto/twitterrc.jpg" alt="profile" 
                           style="width: 40px; height: 40px; border-radius: 50%;">
                     </div>
                   </div>
+                  <!--Apartado para escribir post----------------------------------------->
                   <div style="width: 475px; margin-top: 15px;">
                     <!--Form para repostear_________________________________________-->
                     <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
@@ -150,7 +313,21 @@
                       <div class="form-group">
                         <textarea class="postInfo2" required="" placeholder="Postea tu respuesta" name="mensaje"></textarea>
                       </div>
-                      <div style="margin-top: 50px; margin-left:350px;"><button type="submit" class="btnPostear2"><span style="font-size: 17px;">Responder</span></button></div>
+                      <div style="width: 525px; display: flex;">
+                        <div style="width: 370px; height: 30px; margin-top: 30px; margin-left: -30px;">
+                          <p style="font-size: 17px; color:#1DA1F2;">
+                            <b>
+                              <i class="bi bi-image"></i>&nbsp;&nbsp;
+                              <i class="bi bi-filetype-gif"></i> &nbsp;&nbsp;
+                              <i class="bi bi-list-ul"></i> &nbsp;&nbsp;
+                              <i class="bi bi-emoji-smile"></i>&nbsp;&nbsp;
+                              <i class="bi bi-calendar-plus"></i>&nbsp;&nbsp;
+                              <i class="bi bi-geo-alt"></i>
+                            </b>
+                          </p>
+                        </div>
+                        <div><button type="submit" class="btnPostear2" style="margin-top: 20px;"><span style="font-size: 17px;">Responder</span></button></div>
+                      </div>
                     </form>
                   </div>
                 </div>            
