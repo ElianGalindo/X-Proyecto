@@ -1,6 +1,6 @@
 let loggedUser = {}
 const nombre = document.getElementById('nombreUsuario')
-const idUsuario = document.getElementById('usuario')
+const perfilUser = document.getElementById('usuario')
 const postContainer = document.getElementById('postUsuarios')
 const postCard = document.getElementById('cardPost').content
 const fragment = document.createDocumentFragment()
@@ -93,14 +93,12 @@ const loadUser = () => {
         .then(async (response) =>{
             const user = await response.json()
             loggedUser = user.MESSAGE
-            const inputNombre = document.getElementById('nombreUsuario')
-            inputNombre.value = loggedUser.usuario
-            nombre.innerHTML = loggedUser.nombre 
-            const inputIdUser = document.getElementById('nombreUsuario')
+            const inputIdUser = document.getElementById('idUsuario')
             inputIdUser.value = loggedUser.usuario
-            idUsuario.innerHTML = loggedUser.usuario
-         
-            
+            const inputidUser2 = document.getElementById('idUsuario2')
+            inputidUser2.value = loggedUser.usuario
+            perfilUser.innerHTML = loggedUser.usuario 
+            nombre.innerHTML = loggedUser.nombre
         })
     }
   

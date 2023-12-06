@@ -76,33 +76,33 @@
                     <input style="border:none;" name="idUsuario" id="idUsuario">
                     <div class="form-group">
                       <textarea class="postInfo2" required="" placeholder="¡¿Qué está pasando?!" name="mensaje"></textarea>
-                    </div>  
+                    </div> 
+                    <div style="width: 525px; height: 20px; margin-top: 75px; margin-left: 15px;">
+                      <p style="color: #1DA1F2; font-size: 15px;">
+                        <i class="bi bi-globe-americas"></i>
+                        <a href="#" style="text-decoration: none;color:#1DA1F2;"><b>Cualquier persona puede responder</b></a>
+                      </p>
+                    </div>
+                    <p style="color: rgb(241, 234, 234);">____________________________________________________________________________</p>
+                    <!--Iconos para agregar algunas cosas a los post y boton de postear----------------------->
+                    <div style="width: 590px; display: flex; margin-left: 15px;">
+                      <div style="width: 430px; height: 30px;">
+                        <p style="font-size: 17px; color:#1DA1F2;">
+                          <b>
+                            <i class="bi bi-image"></i>&nbsp;&nbsp;
+                            <i class="bi bi-filetype-gif"></i> &nbsp;&nbsp;
+                            <i class="bi bi-list-ul"></i> &nbsp;&nbsp;
+                            <i class="bi bi-emoji-smile"></i>&nbsp;&nbsp;
+                            <i class="bi bi-calendar-plus"></i>&nbsp;&nbsp;
+                            <i class="bi bi-geo-alt"></i>
+                          </b>
+                        </p>
+                      </div>
+                      <div><button type="submit" class="btnPostear2"><span style="font-size: 17px;">Postear</span></button></div>
+                    </div>
                   </form>
                 </div>
             </div>          
-            <div style="width: 525px; height: 20px; margin-top: 75px; margin-left: 15px;">
-              <p style="color: #1DA1F2; font-size: 15px;">
-                <i class="bi bi-globe-americas"></i>
-                <a href="#" style="text-decoration: none;color:#1DA1F2;"><b>Cualquier persona puede responder</b></a>
-              </p>
-            </div>
-            <p style="color: rgb(241, 234, 234);">____________________________________________________________________________</p>
-            <!--Iconos para agregar algunas cosas a los post y boton de postear----------------------->
-            <div style="width: 625px; display: flex; margin-left: 15px;">
-              <div style="width: 500px; height: 30px;">
-                <p style="font-size: 17px; color:#1DA1F2;">
-                  <b>
-                    <i class="bi bi-image"></i>&nbsp;&nbsp;
-                    <i class="bi bi-filetype-gif"></i> &nbsp;&nbsp;
-                    <i class="bi bi-list-ul"></i> &nbsp;&nbsp;
-                    <i class="bi bi-emoji-smile"></i>&nbsp;&nbsp;
-                    <i class="bi bi-calendar-plus"></i>&nbsp;&nbsp;
-                    <i class="bi bi-geo-alt"></i>
-                  </b>
-                </p>
-              </div>
-              <div><button type="submit" class="btnPostear2"><span style="font-size: 17px;">Postear</span></button></div>
-            </div>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@
             <!--Form para los post_________________________________________-->
             <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
               <input class="postTitulo" type="text" placeholder="Titulo" name="titulo">
-              <input style="border:none;" name="idUsuario" id="idUsuario">
+              <input style="border:none;" name="idUsuario" id="idUsuario2">
               <div class="form-group">
                 <textarea class="postInfo" required="" placeholder="¡¿Qué está pasando?!" name="mensaje"></textarea>
               </div>
@@ -242,7 +242,7 @@
       </div>
     </div>
 </div>
-
+<!--Aqui van  -->
 <template id="cardPost">
   <div class="card" style="width: 100%;" data-idpost="">
     <div style="display: flex;">
@@ -252,12 +252,14 @@
                style="width: 30px; height: 30px; border-radius: 50%;">
         </div>
       </div>
+      <!--contenido del post-->
       <div class="card-body" style="width: 300px;">
-        <div style="display: flex;">
-          <div style="width: auto;"><h5 class="card-title" style="font-size: 17px;">Card title</h5></div>
-          <div style="margin-left:10px;width:auto; margin-top:3px;"><h6 class="card-subtitle mb-2 text-muted" style="font-size: 16px;">Card subtitle</h6></div>
-          <div style="margin-left:10px; width:auto;"><p class="fecha" style="font-size: 16px;">Fecha Publicacion</p></div>
-          <div style="margin-left: 250px;"><i class="bi bi-three-dots" style="font-size: 15px;"></i></div>
+        <div style="margin-left:500px;"><i class="bi bi-three-dots" style="font-size: 15px;"></i></div>
+        <div style="display: flex; margin-top: -20px;">
+          <div><h5 class="card-title" style="font-size: 17px;">Card title</h5></div>
+          <div style="margin-left:10px; margin-top:3px;"><h6 class="card-subtitle mb-2 text-muted" style="font-size: 14px;">Card subtitle</h6></div>
+          <div style="margin-left:10px;"><p class="fecha" style="font-size: 14px; width: 80px;">Fecha Publicacion</p></div>
+          <!---->
         </div>
         <p class="card-text" style="font-size: 15px;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <div style="width: 100%; height:20px;">
@@ -309,7 +311,7 @@
                     <!--Form para repostear_________________________________________-->
                     <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
                       <input class="postTitulo" type="text" placeholder="Titulo" name="titulo">
-                      <input style="border:none;" name="idUsuario" id="idUsuario">
+                      <input style="border:none;" name="idUsuario" id="idRepost">
                       <div class="form-group">
                         <textarea class="postInfo2" required="" placeholder="Postea tu respuesta" name="mensaje"></textarea>
                       </div>
