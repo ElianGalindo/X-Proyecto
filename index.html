@@ -27,33 +27,61 @@
               <br>
               <div class="d-flex align-items-center px-5 ms-xl-4 mt-0 pt-5 pt-xl-0 mt-xl-n5">
                 <div style="text-align: center;">
-                  <!--Boton para abrir modal de login-->
-                  <button style="border-radius: 25px;
-                                 color:rgb(57, 143, 255);
-                                 width: 280px;
-                                 height: 40px;
-                                 background-color: white;"
-                          data-bs-toggle="modal"
-                          data-bs-target="#loginModal">
-                          <b>Iniciar sesion</b>
-                  </button>
+                 <!--Boton de registrarse con google-->
+                  <div>
+                    <button style="border-radius: 25px;
+                                   width: 280px;
+                                   height: 40px;
+                                   background-color: white;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            <b>Registarse con Google <i class="bi bi-google" style="color:green;"></i></b>
+                    </button>
+                  </div>
+                  <!--boton de registrarse con apple-->
+                  <div style="margin-top: 10px;">
+                    <button style="border-radius: 25px;
+                                   color: black;
+                                   width: 280px;
+                                   height: 40px;
+                                   background-color: white;"
+                            data-bs-toggle="modal"
+                            data-bs-target="#loginModal">
+                            <b><i class="bi bi-apple"></i> Registarse con Apple</b>
+                    </button>
+                  </div>
                   <h5>o</h5>
                   <!--Boton para abrir modal de registro-->
                   <button style="border-radius: 25px;
                                  color: white;
                                  width: 280px;
                                  height: 40px;
-                                 background-color: blue;"
+                                 background-color:#1DA1F2;
+                                 border:none;"
                           data-bs-toggle="modal"
                           data-bs-target="#registroModal">
                   
                     Crear cuenta
                   </button>
                   <br>
-                  <span style="text-align: left;">
+                  <span style="text-align: left; margin-top: 10px;">
                     <p style="font-size: 10px; width:280px;">Al registrarte, aceptas los <a target="_blank" style="text-decoration: none;" href="https://twitter.com/es/tos">Términos de servicio</a> y la <a target="_blank" style="text-decoration: none;" href="https://twitter.com/es/privacy">Política de privacidad</a>, incluida la política de <a target="_blank" style="text-decoration: none;" href="https://help.twitter.com/es/rules-and-policies/x-cookies">Uso de Cookies</a>.</p>
                   </span>
+                   <!--Boton para abrir modal de login-->
+                  <div style="margin-top: 70px;">
+                    <h6>Ya tienes una cuenta?</h6>
+                    <button style="border-radius: 25px;
+                                     color:rgb(57, 143, 255);
+                                     width: 280px;
+                                     height: 40px;
+                                     background-color: white;"
+                              data-bs-toggle="modal"
+                              data-bs-target="#loginModal">
+                              <b>Iniciar sesion</b>
+                      </button>
+                  </div>
                 </div>
+                
                <!--Modal de login---------------------------------------------------------------> 
                 <div class="modal" id="loginModal">
                   <div class="modal-dialog">

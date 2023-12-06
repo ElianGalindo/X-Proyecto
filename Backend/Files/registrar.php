@@ -17,7 +17,7 @@
     
         $result = mysqli_query($conn, $queryInsert);
         if($result) {
-            Header("Location: ../../home.html");
+            Header("Location: ../../index.html");
         } else {
             Header("Location: ../../index.html?error=true");
         }
